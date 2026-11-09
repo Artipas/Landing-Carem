@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CAREM · Chocolate belga</title>
+<meta name="description" content="Cuatro coberturas de chocolate belga para pastelería y hostelería profesional, en formatos de 5 y 10 kg. Una marca de ARTIPAS.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#3b1d10">
+<!-- Vista previa al compartir. PENDIENTE: cuando tengáis el dominio, poner la dirección completa en og:url y og:image (p. ej. https://carem.artipas.com/img/og-carem.jpg) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="CAREM">
+<meta property="og:title" content="CAREM · La receta española de chocolate belga">
+<meta property="og:description" content="Cuatro coberturas de chocolate belga para pastelería y hostelería profesional, en formatos de 5 y 10 kg. Una marca de ARTIPAS.">
+<meta property="og:image" content="img/og-carem.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CAREM, la receta española de chocolate belga">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAREM · La receta española de chocolate belga">
+<meta name="twitter:description" content="Cuatro coberturas de chocolate belga para pastelería y hostelería profesional, en formatos de 5 y 10 kg.">
+<meta name="twitter:image" content="img/og-carem.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* Layout: editorial landing en bandas alternas crema / marrón chocolate, como la presentación de marca. Un solo tema (identidad fija). */
+:root {
+  --cream: #fbf6ee;
+  --sand: #f4eadb;
+  --paper: #ffffff;
+  --choc: #67341a;       /* Principal (manual) */
+  --choc-deep: #3b1d10;  /* fondo de bandas oscuras */
+  --ink: #2c1a12;
+  --muted: #74594b;
+  --berry: #b52b5e;      /* Detalles (manual) */
+  --gold: #fcc900;       /* Fondo (manual), usado como acento sobre oscuro */
+  --line: #e6d8c4;
+  --on-dark: #f6ebdd;
+  --on-dark-muted: #cdb6a2;
+
+  --f-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Raleway", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: clamp(1.35rem, 1.1rem + 1vw, 1.65rem);
+  --step-3: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --step-4: clamp(2.2rem, 1.4rem + 3.6vw, 3.9rem);
+
+  --wrap: 1180px;
+  --radius: 14px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: var(--f-body); font-size: var(--step-0); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--choc-deep); transition: background-color .3s; }
+body.scrolled::before { background: var(--cream); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--berry); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: calc(var(--wrap) + 2 * 32px); margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+.band { padding-block: clamp(48px, 6vw, 88px); }
+#legado { padding-bottom: clamp(20px, 2.5vw, 32px); }
+#idea { padding-top: clamp(20px, 2.5vw, 32px); }
+#gama { padding-bottom: clamp(20px, 2.5vw, 32px); }
+#escalas { padding-top: clamp(20px, 2.5vw, 32px); }
+#recetario { padding-bottom: clamp(20px, 2.5vw, 32px); }
+#acompanamiento { padding-top: clamp(20px, 2.5vw, 32px); }
+.band--sand { background: var(--sand); }
+.band--dark { background: var(--choc-deep); color: var(--on-dark); }
+
+.eyebrow {
+  font-family: var(--f-body); font-weight: 700; font-size: var(--step--1);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--berry); margin: 0 0 14px;
+}
+.band--dark .eyebrow { color: var(--gold); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font-size: var(--step-3); color: var(--choc); }
+.band--dark h2 { color: var(--on-dark); }
+h3 { font-size: var(--step-2); }
+p { margin: 0; }
+.lead { font-size: var(--step-1); color: var(--muted); max-width: 60ch; }
+.band--dark .lead { color: var(--on-dark-muted); }
+.section-head { display: grid; gap: 16px; max-width: 760px; margin-bottom: clamp(28px, 4vw, 44px); }
+
+/* Botones */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; justify-content: center;
+  font-family: var(--f-body); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.01em;
+  text-decoration: none; border-radius: 999px; padding: 14px 24px; border: 2px solid transparent;
+  transition: background-color .2s, color .2s, border-color .2s, transform .2s;
+  white-space: nowrap;
+}
+.btn svg { width: 16px; height: 16px; flex: none; }
+.btn--primary { background: var(--choc); color: var(--paper); }
+.btn--primary:hover { background: var(--berry); }
+.btn--gold { background: var(--gold); color: var(--choc-deep); }
+.btn--gold:hover { background: var(--paper); }
+.btn--ghost { border-color: currentColor; color: var(--on-dark); }
+.btn--ghost:hover { background: var(--on-dark); color: var(--choc-deep); border-color: var(--on-dark); }
+.btn--line { border-color: var(--choc); color: var(--choc); }
+.btn--line:hover { background: var(--choc); color: var(--paper); }
+
+/* Cabecera */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: var(--choc-deep);
+  border-bottom: 1px solid rgba(246,235,221,.12);
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.site-header .logo-light { display: block; }
+.site-header .logo-dark { display: none; }
+.site-header .nav a { color: var(--on-dark); }
+.site-header .nav a:hover { color: var(--gold); border-color: var(--gold); }
+.site-header .btn--primary { background: var(--gold); color: var(--choc-deep); }
+.site-header .btn--primary:hover { background: var(--paper); }
+.site-header.is-scrolled {
+  background: color-mix(in srgb, var(--cream) 94%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 24px -18px rgba(59,29,16,.35);
+}
+.site-header.is-scrolled .logo-light { display: none; }
+.site-header.is-scrolled .logo-dark { display: block; }
+.site-header.is-scrolled .nav a { color: var(--ink); }
+.site-header.is-scrolled .nav a:hover { color: var(--choc); border-color: var(--berry); }
+.site-header.is-scrolled .btn--primary { background: var(--choc); color: var(--paper); }
+.site-header.is-scrolled .btn--primary:hover { background: var(--berry); }
+.site-header .wrap { display: flex; align-items: center; gap: 24px; min-height: 72px; }
+.brand { display: flex; align-items: center; text-decoration: none; flex: none; }
+.brand img { height: 44px; width: auto; }
+.nav { display: flex; gap: 26px; margin-left: auto; margin-right: 24px; }
+.nav a { text-decoration: none; font-weight: 600; font-size: 0.92rem; padding-block: 6px; border-bottom: 2px solid transparent; transition: color .3s; }
+.site-header .btn { padding: 11px 18px; font-size: 0.88rem; }
+.btn .short { display: none; }
+@media (max-width: 960px) { .nav { display: none; } .site-header .btn { margin-left: auto; } }
+@media (max-width: 480px) { .btn .long { display: none; } .btn .short { display: inline; } .brand img { height: 38px; } }
+
+/* Hero */
+.hero { position: relative; background: var(--choc-deep); color: var(--on-dark); padding-block: clamp(72px, 9vw, 132px); overflow: hidden; min-height: min(640px, 82vh); display: flex; align-items: center; }
+.hero .wrap { position: relative; z-index: 1; width: 100%; }
+.hero-copy { max-width: 560px; }
+.hero-media { position: absolute; inset: 0 0 0 auto; width: 55%; pointer-events: none; }
+.hero-media::before { content: ""; position: absolute; right: -10%; top: 50%; transform: translateY(-50%); width: 95%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(181,43,94,.2), rgba(181,43,94,0)); }
+.hero-media img { position: absolute; width: min(820px, 57vw); max-width: none; height: auto; right: -17%; top: 50%; transform: translateY(-50%); filter: drop-shadow(0 30px 50px rgba(0,0,0,.5)); }
+@media (min-width: 861px) and (max-width: 1140px) {
+  .hero-copy { max-width: 48vw; }
+  .hero-media img { width: 52vw; right: -14%; }
+}
+@media (max-width: 860px) {
+  .hero { display: flex; flex-direction: column-reverse; align-items: stretch; padding-block: 0 56px; min-height: 0; }
+  .hero-media { position: relative; width: 100%; height: clamp(260px, 72vw, 420px); overflow: hidden; }
+  .hero-media::before { right: -20%; top: auto; bottom: -30%; transform: none; width: 120%; }
+  .hero-media img { width: max(560px, 128vw); right: -30%; top: auto; bottom: -26%; transform: none; }
+}
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--step-4); color: var(--on-dark); }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero .lead { color: var(--on-dark-muted); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: var(--step--1); color: var(--on-dark-muted); font-weight: 500; margin-top: 8px; }
+.hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-meta span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--berry); }
+
+/* Franja de claves */
+.keys { border-bottom: 1px solid var(--line); background: var(--paper); }
+.keys .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.key { padding: 26px 22px; display: grid; gap: 4px; border-left: 1px solid var(--line); min-width: 0; }
+.key:first-child { border-left: 0; padding-left: 0; }
+.key b { font-family: var(--f-display); font-size: 1.6rem; font-weight: 600; color: var(--choc); line-height: 1.1; }
+.key span { font-size: 0.9rem; color: var(--muted); }
+@media (max-width: 860px) {
+  .keys .wrap { grid-template-columns: repeat(2, 1fr); }
+  .key { padding: 20px 16px; }
+  .key:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .key:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* Legado */
+.legacy { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.legacy figure { margin: 0; position: relative; }
+.legacy figure img { border-radius: var(--radius); width: 100%; aspect-ratio: 4/3.4; object-fit: cover; }
+.legacy figcaption { font-size: var(--step--1); color: var(--muted); margin-top: 10px; }
+.legacy-copy { display: grid; gap: 22px; min-width: 0; }
+blockquote { margin: 0; font-family: var(--f-display); font-weight: 500; font-size: clamp(1.4rem, 1.1rem + 1.3vw, 2rem); line-height: 1.3; color: var(--choc); text-wrap: balance; }
+blockquote cite { display: block; margin-top: 14px; font-family: var(--f-body); font-style: normal; font-size: 0.9rem; color: var(--berry); font-weight: 600; }
+.legacy-copy p { max-width: 60ch; }
+.artipas-note { display: flex; gap: 16px; align-items: center; padding: 18px 20px; background: var(--paper); border-radius: var(--radius); border: 1px solid var(--line); }
+.artipas-note b { font-family: var(--f-display); font-size: 2.2rem; color: var(--berry); line-height: 1; flex: none; }
+.artipas-note span { font-size: 0.95rem; }
+@media (max-width: 860px) { .legacy { grid-template-columns: 1fr; } }
+
+/* Idea */
+.idea { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.idea .formula { display: grid; gap: 12px; }
+.formula-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.formula-row:last-child { border-bottom: 1px solid var(--line); }
+.formula-row dt { font-size: 0.75rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--berry); padding-top: 3px; }
+.formula-row dd { margin: 0; }
+.formula-row dd b { display: block; font-family: var(--f-display); font-size: 1.2rem; color: var(--choc); font-weight: 600; }
+@media (max-width: 860px) { .idea { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .formula-row { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Gama */
+.range { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.product { background: var(--paper); border-radius: var(--radius); border: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr; overflow: hidden; min-width: 0; }
+.product-media { position: relative; background: var(--paper); padding: 22px 22px 0; }
+.product-media .disc { aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+.product-media .disc img { width: 100%; height: 100%; object-fit: cover; }
+.product-media .box { position: absolute; right: 12px; bottom: -10px; width: 34%; background: var(--paper); border-radius: 10px; padding: 4px; box-shadow: 0 10px 22px -12px rgba(59,29,16,.45); }
+.product-body { padding: 26px 22px 22px; display: grid; gap: 14px; align-content: start; }
+.product-body .profile { font-size: 0.72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 800; color: var(--berry); }
+.product-body h3 { font-size: 1.4rem; color: var(--choc); }
+.product-body h3 small { display: block; font-family: var(--f-body); font-size: 0.75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 2px; }
+.notes { font-size: 0.95rem; }
+.meter { display: grid; gap: 6px; }
+.meter-label { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.meter-track { height: 8px; border-radius: 99px; background: var(--sand); overflow: hidden; }
+.meter-fill { height: 100%; border-radius: 99px; background: var(--fill, var(--choc)); }
+.formats { display: flex; gap: 8px; flex-wrap: wrap; }
+.formats span { font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 99px; background: var(--sand); color: var(--choc); font-variant-numeric: tabular-nums; }
+.product-links { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-top: 12px; border-top: 1px solid var(--line); margin-top: 4px; }
+.product-links a { font-size: 0.88rem; font-weight: 700; color: var(--choc); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.product-links a:hover { color: var(--berry); }
+.product-links a svg { width: 14px; height: 14px; }
+.range-note { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; }
+.range-note p { color: var(--muted); max-width: 62ch; }
+@media (max-width: 1060px) { .range { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .range { grid-template-columns: 1fr; } }
+
+/* Dos escalas */
+.scales { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.scale { border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: 0.85fr 1fr; color: var(--paper); min-width: 0; }
+.scale--berry { background: var(--berry); }
+.scale--choc { background: var(--choc); }
+.scale img { width: 100%; height: 100%; object-fit: cover; min-height: 220px; }
+.scale-copy { padding: clamp(22px, 3vw, 34px); display: grid; gap: 10px; align-content: center; min-width: 0; }
+.scale-copy .eyebrow { color: var(--paper); opacity: .8; margin: 0; }
+.scale--choc .scale-copy .eyebrow { color: var(--gold); opacity: 1; }
+.scale-copy h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); }
+.scale-copy p { color: color-mix(in srgb, var(--paper) 88%, transparent); }
+.scales-note { margin-top: 22px; color: var(--muted); }
+@media (max-width: 900px) { .scales { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .scale { grid-template-columns: 1fr; } .scale img { aspect-ratio: 16/10; min-height: 0; } }
+
+/* Recetario */
+.recipes { display: grid; grid-template-columns: 1.2fr 1fr 1fr; grid-auto-rows: auto; gap: 18px; }
+.dish { margin: 0; background: var(--paper); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.dish img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.dish figcaption { padding: 14px 16px 16px; display: grid; gap: 2px; align-content: start; }
+.hero .eyebrow { color: var(--gold); }
+.dish figcaption b { font-family: var(--f-display); font-weight: 600; color: var(--choc); font-size: 1.05rem; line-height: 1.25; }
+.dish figcaption span { font-size: 0.82rem; color: var(--berry); font-weight: 700; }
+.dish--feature { grid-row: span 2; grid-template-rows: 1fr auto; }
+.dish--feature img { aspect-ratio: auto; height: 100%; min-height: 320px; object-position: center 40%; }
+.dish--feature figcaption { padding: 22px; gap: 8px; }
+.dish--feature figcaption b { font-size: 1.5rem; }
+.dish--feature figcaption p { font-size: 0.95rem; color: var(--muted); }
+.tag, .dish figcaption .tag { display: inline-block; justify-self: start; font-size: 0.7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; background: var(--berry); color: var(--paper); padding: 4px 10px; border-radius: 99px; margin-bottom: 6px; }
+@media (max-width: 900px) { .recipes { grid-template-columns: 1fr 1fr; } .dish--feature { grid-column: 1 / -1; grid-row: auto; } .dish--feature img { aspect-ratio: 16/10; min-height: 0; } }
+@media (max-width: 420px) { .recipes { grid-template-columns: 1fr; } }
+
+/* Fichas técnicas */
+.specs { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.specs-visual { background: var(--paper); border-radius: var(--radius); padding: clamp(18px, 3vw, 32px); border: 1px solid var(--line); }
+.specs-visual img { border-radius: 6px; box-shadow: 0 16px 34px -18px rgba(59,29,16,.4); }
+.specs-copy { display: grid; gap: 22px; min-width: 0; }
+.spec-params { display: flex; flex-wrap: wrap; gap: 8px; }
+.spec-params span { font-size: 0.85rem; font-weight: 600; padding: 7px 14px; border-radius: 99px; border: 1px solid var(--line); background: var(--paper); }
+.sheet-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.sheet-list li { border-bottom: 1px solid var(--line); }
+.sheet-list a { display: flex; align-items: center; gap: 14px; padding: 14px 4px; text-decoration: none; }
+.sheet-list a:hover { background: var(--paper); }
+.sheet-list .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.sheet-list b { font-weight: 700; color: var(--choc); }
+.sheet-list em { margin-left: auto; font-style: normal; font-size: 0.85rem; font-weight: 700; color: var(--berry); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.sheet-list em svg { width: 14px; height: 14px; }
+@media (max-width: 860px) { .specs { grid-template-columns: 1fr; } .specs-visual { max-width: 520px; } }
+
+/* Acompañamiento */
+.support { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.support-list { display: grid; gap: 0; margin-top: 8px; }
+.support-item { display: grid; gap: 4px; padding: 18px 0; border-top: 1px solid var(--line); }
+.support-item:last-child { border-bottom: 1px solid var(--line); }
+.support-item b { font-family: var(--f-display); font-size: 1.2rem; color: var(--choc); font-weight: 600; }
+.support-item p { color: var(--muted); font-size: 0.97rem; }
+.support figure { margin: 0; }
+.support figure img { border-radius: var(--radius); width: 100%; aspect-ratio: 3/3.6; object-fit: cover; object-position: center 30%; }
+.support figcaption { font-size: var(--step--1); color: var(--muted); margin-top: 10px; }
+@media (max-width: 860px) { .support { grid-template-columns: 1fr; } .support figure img { aspect-ratio: 4/3; } }
+
+/* Cercanía */
+.near { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.near-copy { display: grid; gap: 20px; min-width: 0; }
+.near-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
+.near-points div { border-top: 2px solid var(--gold); padding-top: 12px; display: grid; gap: 4px; }
+.near-points b { font-family: var(--f-display); font-weight: 600; font-size: 1.1rem; color: var(--on-dark); }
+.near-points span { font-size: 0.9rem; color: var(--on-dark-muted); }
+.near-visual { position: relative; padding: 24px 12px 56px; }
+.near-visual img { position: relative; z-index: 1; width: 100%; transform: rotate(-4deg); animation: float 6s ease-in-out infinite; }
+.near-visual::after { content: ""; position: absolute; left: 14%; right: 14%; bottom: 14px; height: 34px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.55), rgba(0,0,0,0)); animation: shadow 6s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-4deg) translateY(-10px); } }
+@keyframes shadow { 0%,100% { transform: scaleX(1); opacity: 1; } 50% { transform: scaleX(.9); opacity: .75; } }
+@media (max-width: 860px) { .near { grid-template-columns: 1fr; } .near-visual { max-width: 460px; } }
+@media (max-width: 520px) { .near-points { grid-template-columns: 1fr; } }
+
+/* Cómo comprar */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; display: grid; gap: 8px; align-content: start; counter-increment: step; }
+.steps li::before { content: counter(step); font-family: var(--f-display); font-size: 2.4rem; font-weight: 600; color: var(--berry); line-height: 1; }
+.steps b { font-family: var(--f-display); font-weight: 600; font-size: 1.2rem; color: var(--choc); }
+.steps p { color: var(--muted); font-size: 0.97rem; }
+.steps a { color: var(--choc); font-weight: 700; }
+.buy-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.buy-cta span { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.faq-head { display: grid; gap: 16px; position: sticky; top: 100px; }
+.faq-list { border-top: 1px solid var(--line); min-width: 0; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 18px; align-items: center;
+  padding: 20px 4px; font-family: var(--f-display); font-weight: 600; font-size: 1.15rem; color: var(--choc);
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; font-family: var(--f-body); font-weight: 500; font-size: 1.6rem; color: var(--berry); line-height: 1; flex: none; transition: transform .2s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { padding: 0 4px 22px; color: var(--muted); max-width: 64ch; }
+.faq-list details p a { color: var(--choc); font-weight: 700; }
+@media (max-width: 860px) { .faq { grid-template-columns: 1fr; } .faq-head { position: static; } }
+
+/* Footer que se revela por detrás */
+main { position: relative; z-index: 1; background: var(--cream); box-shadow: 0 24px 40px -12px rgba(0,0,0,.45); }
+.reveal-footer { position: sticky; bottom: 0; z-index: 0; }
+@media (max-height: 620px) { .reveal-footer { position: static; } }
+
+/* Cierre y pie */
+.closing { text-align: center; }
+.closing .wrap { display: grid; gap: 22px; justify-items: center; }
+.closing-logo { width: min(320px, 70vw); }
+.closing h2 { font-size: var(--step-4); color: var(--on-dark); }
+.closing .lead { margin: 0 auto; }
+.closing .hero-actions { justify-content: center; }
+.closing .social { display: flex; gap: 12px; justify-content: center; margin-top: 8px; }
+.closing .social a { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(246,235,221,.35); color: var(--on-dark); transition: background-color .2s, color .2s, border-color .2s; }
+.closing .social a:hover { background: var(--gold); border-color: var(--gold); color: var(--choc-deep); }
+.closing .social svg { width: 20px; height: 20px; }
+.closing-note { margin-top: 18px; font-size: 0.8rem; color: var(--on-dark-muted); }
+
+</style>
+</head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-out" viewBox="0 0 16 16"><path d="M6 3h7v7M13 3 4 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 16 16"><path d="M4 1.5h5.5L13 5v9.5H4z M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="CAREM, inicio"><img class="logo-light" src="img/carem-logo-light.png" alt="Carem" width="900" height="460"><img class="logo-dark" src="img/carem-logo.png" alt="" width="900" height="460"></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#legado">Historia</a>
+      <a href="#gama">La gama</a>
+      <a href="#recetario">Recetario</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn btn--primary" href="https://www.artipas.com/carem" target="_blank" rel="noopener">
+      <span class="long">Comprar en Artipas.com</span><span class="short">Comprar</span>
+      <svg aria-hidden="true"><use href="#i-out"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Nueva marca de ARTIPAS</p>
+        <h1>La receta española de <em>chocolate belga</em></h1>
+        <p class="lead">CAREM son cuatro coberturas de chocolate belga pensadas para el obrador y la cocina profesional: pastelería, repostería y hostelería. Se venden en formatos de 5 kg y 10 kg en nuestra tienda online.</p>
+        <div class="hero-actions">
+          <a class="btn btn--gold" href="#gama">Ver la gama</a>
+          <a class="btn btn--ghost" href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar en Artipas.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="img/tarta-caramelo-recorte.webp" alt="Tarta de caramelo y pecana elaborada con CAREM Con leche 35 %" width="534" height="410">
+    </div>
+  </section>
+
+  <!-- LEGADO -->
+  <section class="band" id="legado">
+    <div class="wrap legacy">
+      <figure>
+        <img src="img/careme.jpg" alt="Retrato ilustrativo de Marie-Antoine Carême leyendo un tratado de pastelería" width="760" height="507" loading="lazy">
+        <figcaption>Marie-Antoine Carême, «el rey de los cocineros y el cocinero de los reyes».</figcaption>
+      </figure>
+      <div class="legacy-copy">
+        <p class="eyebrow">El legado</p>
+        <blockquote>«Las bellas artes son cinco: la pintura, la escultura, la poesía, la música y la arquitectura, la cual tiene como rama principal a la pastelería.»<cite>Marie-Antoine Carême</cite></blockquote>
+        <p>CAREM toma su nombre y su legado de Carême, chef y gastrónomo francés considerado uno de los padres de la <i>haute cuisine</i>. De él hereda tres ideas: precisión técnica, cuidado estético y una artesanía que no se resigna a lo industrial.</p>
+        <div class="artipas-note"><b>30+</b><span>La marca nace de la experiencia de <strong>ARTIPAS</strong>, una empresa familiar con más de 30 años al servicio de la pastelería profesional.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DE LA IDEA AL PRODUCTO -->
+  <section class="band" id="idea">
+    <div class="wrap idea">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">De la idea al producto</p>
+        <h2>La receta y la sensibilidad españolas, aplicadas a la calidad de origen del chocolate belga.</h2>
+        <p class="lead">No es un chocolate belga más con otro nombre. Es una manera propia de entenderlo y trabajarlo, pensada para la pastelería y la hostelería profesional.</p>
+      </div>
+      <dl class="formula">
+        <div class="formula-row"><dt>Origen</dt><dd><b>Chocolate belga</b>Calidad de origen como punto de partida de toda la gama.</dd></div>
+        <div class="formula-row"><dt>Receta</dt><dd><b>Sensibilidad española</b>Una forma propia de entender el sabor y el uso en el obrador.</dd></div>
+        <div class="formula-row"><dt>Trabajo</dt><dd><b>Misma fluidez en las cuatro</b>Todas las referencias comparten fluidez de trabajo y calidad base.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- GAMA -->
+  <section class="band band--sand" id="gama">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">La gama CAREM</p>
+        <h2>Cuatro coberturas, un mismo nivel de calidad</h2>
+        <p class="lead">Las cuatro referencias se presentan en 5 kg y 10 kg. La diferencia entre ellas es de sabor y de uso, no de nivel.</p>
+      </div>
+
+      <div class="range">
+        <article class="product" id="p-negro-71">
+          <div class="product-media"><div class="disc"><img src="img/negro-71.jpg" alt="Cobertura CAREM Negro 71 %" width="420" height="420" loading="lazy"></div><img class="box" src="img/caja-negro-71.jpg" alt="" width="200" height="190" loading="lazy"></div>
+          <div class="product-body">
+            <span class="profile">Intenso</span>
+            <h3><small>CAREM</small>Negro 71 %</h3>
+            <p class="notes">Cacao potente, amargor agradable y un toque cítrico.</p>
+            <div class="meter" aria-label="71 % de cacao"><div class="meter-label"><span>Cacao</span><span>71 %</span></div><div class="meter-track"><div class="meter-fill" style="width:71%;--fill:#3b1d10"></div></div></div>
+            <div class="formats"><span>5 kg</span><span>10 kg</span></div>
+            <div class="product-links">
+              <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a href="fichas/CAREM-Negro-71-ficha-tecnica.pdf" target="_blank" rel="noopener">Ficha técnica (PDF) <svg aria-hidden="true"><use href="#i-doc"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" id="p-negro-54">
+          <div class="product-media"><div class="disc"><img src="img/negro-54.jpg" alt="Cobertura CAREM Negro 54 %" width="420" height="420" loading="lazy"></div><img class="box" src="img/caja-negro-54.jpg" alt="" width="200" height="190" loading="lazy"></div>
+          <div class="product-body">
+            <span class="profile">Equilibrado</span>
+            <h3><small>CAREM</small>Negro 54 %</h3>
+            <p class="notes">Cacao tostado, con notas afrutadas y de fruto seco.</p>
+            <div class="meter" aria-label="54 % de cacao"><div class="meter-label"><span>Cacao</span><span>54 %</span></div><div class="meter-track"><div class="meter-fill" style="width:54%;--fill:#67341a"></div></div></div>
+            <div class="formats"><span>5 kg</span><span>10 kg</span></div>
+            <div class="product-links">
+              <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a href="fichas/CAREM-Negro-54-ficha-tecnica.pdf" target="_blank" rel="noopener">Ficha técnica (PDF) <svg aria-hidden="true"><use href="#i-doc"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" id="p-leche-35">
+          <div class="product-media"><div class="disc"><img src="img/leche-35.jpg" alt="Cobertura CAREM Con leche 35 %" width="420" height="420" loading="lazy"></div><img class="box" src="img/caja-leche-35.jpg" alt="" width="200" height="190" loading="lazy"></div>
+          <div class="product-body">
+            <span class="profile">Cremoso</span>
+            <h3><small>CAREM</small>Con leche 35 %</h3>
+            <p class="notes">Fresco y afrutado, con un sutil toque tostado.</p>
+            <div class="meter" aria-label="35 % de cacao"><div class="meter-label"><span>Cacao</span><span>35 %</span></div><div class="meter-track"><div class="meter-fill" style="width:35%;--fill:#9a5a35"></div></div></div>
+            <div class="formats"><span>5 kg</span><span>10 kg</span></div>
+            <div class="product-links">
+              <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a href="fichas/CAREM-Con-leche-35-ficha-tecnica.pdf" target="_blank" rel="noopener">Ficha técnica (PDF) <svg aria-hidden="true"><use href="#i-doc"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" id="p-blanco-29">
+          <div class="product-media"><div class="disc"><img src="img/blanco-29.jpg" alt="Cobertura CAREM Blanco 29 %" width="420" height="420" loading="lazy"></div><img class="box" src="img/caja-blanco-29.jpg" alt="" width="200" height="190" loading="lazy"></div>
+          <div class="product-body">
+            <span class="profile">Suave</span>
+            <h3><small>CAREM</small>Blanco 29 %</h3>
+            <p class="notes">Dulce, con matices lácteos y de vainilla.</p>
+            <div class="meter" aria-label="29 % de cacao"><div class="meter-label"><span>Cacao</span><span>29 %</span></div><div class="meter-track"><div class="meter-fill" style="width:29%;--fill:#d9b98a"></div></div></div>
+            <div class="formats"><span>5 kg</span><span>10 kg</span></div>
+            <div class="product-links">
+              <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a href="fichas/CAREM-Blanco-29-ficha-tecnica.pdf" target="_blank" rel="noopener">Ficha técnica (PDF) <svg aria-hidden="true"><use href="#i-doc"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="range-note">
+        <p>Todas comparten la misma fluidez de trabajo y la misma calidad de origen. Las cuatro variedades cubren distintos registros de sabor y precio.</p>
+        <a class="btn btn--primary" href="https://www.artipas.com/carem" target="_blank" rel="noopener">Ver precios en Artipas.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOS ESCALAS -->
+  <section class="band band--sand" id="escalas">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Para cada encargo</p>
+        <h2>Un mismo producto, dos escalas</h2>
+      </div>
+      <div class="scales">
+        <div class="scale scale--choc">
+          <img src="img/tarta-glaseada.jpg" alt="Tarta de chocolate glaseada con decoración de chocolate" width="640" height="640" loading="lazy">
+          <div class="scale-copy">
+            <p class="eyebrow">Alta pastelería</p>
+            <h3>Un postre único</h3>
+            <p>Para esa elaboración cuidada e irrepetible, donde lo importante es garantizar el resultado.</p>
+          </div>
+        </div>
+        <div class="scale scale--choc">
+          <img src="img/bombones-leche.jpg" alt="Bombones de chocolate con leche en serie" width="640" height="640" loading="lazy">
+          <div class="scale-copy">
+            <p class="eyebrow">Catering y producción</p>
+            <h3>400, 500, 600 elaboraciones</h3>
+            <p>Para el catering de un gran evento, con la misma fluidez y el mismo resultado en cada una.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECETARIO -->
+  <section class="band" id="recetario">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">La gama en el obrador · Recetario</p>
+        <h2>Ideas reales con cada referencia</h2>
+        <p class="lead">Estamos construyendo un recetario con aplicaciones en bombonería, pastelería y postre emplatado. Cada elaboración indica la cobertura CAREM con la que se ha hecho.</p>
+      </div>
+      <div class="recipes">
+        <figure class="dish dish--feature">
+          <img src="img/fondant-mandarina.jpg" alt="Fondant de chocolate con mandarina emplatado" width="640" height="640" loading="lazy">
+          <figcaption>
+            <span class="tag">Receta destacada</span>
+            <b>Fondant de chocolate con mandarina</b>
+            <span>Elaborado con CAREM Negro 54 %</span>
+            <p>Un postre emplatado que muestra el perfil tostado y afrutado del Negro 54 % junto a la acidez de la mandarina.</p>
+          </figcaption>
+        </figure>
+        <figure class="dish"><img src="img/bombones-yuzu.jpg" alt="Bombones blancos de yuzu y pistacho" width="560" height="560" loading="lazy"><figcaption><b>Bombones yuzu-pistacho</b><span>Blanco 29 %</span></figcaption></figure>
+        <figure class="dish"><img src="img/tarta-fresa.jpg" alt="Tarta de fresa con cobertura blanca" width="560" height="560" loading="lazy"><figcaption><b>Tarta de fresa</b><span>Blanco 29 %</span></figcaption></figure>
+        <figure class="dish"><img src="img/tarta-caramelo.jpg" alt="Tarta de caramelo y pecana con tejas de chocolate" width="560" height="560" loading="lazy"><figcaption><b>Tarta caramelo-pecana</b><span>Con leche 35 %</span></figcaption></figure>
+        <figure class="dish"><img src="img/tartaleta-grosella.jpg" alt="Tartaleta de chocolate con grosella" width="560" height="560" loading="lazy"><figcaption><b>Tartaleta de grosella</b><span>Negro 54 %</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACOMPAÑAMIENTO -->
+  <section class="band" id="acompanamiento">
+    <div class="wrap support">
+      <div>
+        <div class="section-head" style="margin-bottom:12px">
+          <p class="eyebrow">Valor añadido</p>
+          <h2>No solo vendemos chocolate: te acompañamos a usarlo</h2>
+        </div>
+        <div class="support-list">
+          <div class="support-item"><b>Ficha técnica por referencia</b><p>Temperaturas de fundido, enfriado y atemperado, para un resultado siempre consistente.</p></div>
+          <div class="support-item"><b>Recetario y ejemplos de uso</b><p>Aplicaciones reales en bombonería, pastelería y postre emplatado.</p></div>
+          <div class="support-item"><b>Contenido listo para compartir</b><p>Recetas y consejos de uso que publicamos de forma periódica en nuestras redes.</p></div>
+        </div>
+      </div>
+      <figure>
+        <img src="img/chef.jpg" alt="Chef de ARTIPAS emplatando un fondant con CAREM Negro 54 %" width="720" height="1080" loading="lazy">
+        <figcaption>Fondant de chocolate con mandarina · Elaborado con CAREM Negro 54 %</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CERCANÍA -->
+  <section class="band band--dark" id="cercania">
+    <div class="wrap near">
+      <div class="near-copy">
+        <p class="eyebrow">Lo que nadie más ofrece</p>
+        <h2>Cercanía real, frente a cualquier gran fabricante internacional</h2>
+        <p class="lead">CAREM se sirve desde nuestro propio almacén, con entrega inmediata y trato directo con tu comercial de ARTIPAS de siempre.</p>
+        <div class="near-points">
+          <div><b>Almacén propio</b><span>Stock disponible para servir sin esperas.</span></div>
+          <div><b>Sin intermediarios</b><span>Trato directo con tu comercial de ARTIPAS.</span></div>
+          <div><b>Sin importación</b><span>Sin plazos de importación que retrasen tu pedido.</span></div>
+        </div>
+      </div>
+      <div class="near-visual"><img src="img/caja-recorte.webp" alt="Caja de CAREM" width="1063" height="612" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap faq">
+      <div class="faq-head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que suelen preguntarnos</h2>
+        <p class="lead">Si tu duda no aparece aquí, escríbenos y te responde tu comercial.</p>
+      </div>
+      <div class="faq-list">
+        <details name="faq">
+          <summary>¿Dónde puedo comprar CAREM?</summary>
+          <p>En nuestra tienda online, en <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">artipas.com/carem</a>. Allí encontrarás precios, disponibilidad y el proceso de pedido. También puedes hacer tu pedido a través de tu comercial de ARTIPAS.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Qué es CAREM y quién está detrás?</summary>
+          <p>CAREM es la nueva marca de coberturas de chocolate belga de ARTIPAS, empresa familiar con más de 30 años de experiencia en el sector de la pastelería profesional. Su nombre rinde homenaje a Marie-Antoine Carême, uno de los padres de la alta cocina.</p>
+        </details>
+        <details name="faq">
+          <summary>¿En qué formatos se vende?</summary>
+          <p>Las cuatro referencias están disponibles en formatos de 5 kg y 10 kg, pensados para el obrador y la cocina profesional.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Qué referencia me conviene?</summary>
+          <p>Depende del sabor y del uso. El Negro 71 % es intenso, con amargor agradable y toque cítrico. El Negro 54 % es equilibrado, tostado y afrutado. El Con leche 35 % es cremoso y fresco. El Blanco 29 % es suave, con matices lácteos y de vainilla. Las cuatro tienen la misma calidad base y la misma fluidez de trabajo.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Sirve tanto para piezas únicas como para grandes producciones?</summary>
+          <p>Sí. CAREM está pensada para un postre único y también para 400, 500 o 600 elaboraciones en un catering, con la misma fluidez y el mismo resultado en cada una.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Hay ficha técnica de cada cobertura?</summary>
+          <p>Sí. Cada referencia tiene su ficha con temperaturas de fundido, enfriado y atemperado e índice de fluidez. La tienes en la ficha de cada producto de la <a href="#gama">gama</a>, o puedes pedírsela a tu comercial.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Cuánto tarda en llegar mi pedido?</summary>
+          <p>CAREM se sirve desde nuestro propio almacén, sin intermediarios ni plazos de importación. Consulta los plazos de entrega para tu zona en <a href="https://www.artipas.com/carem" target="_blank" rel="noopener">artipas.com/carem</a> o con tu comercial.</p>
+        </details>
+        <details name="faq">
+          <summary>¿Qué significa «la receta española de chocolate belga»?</summary>
+          <p>Partimos de la calidad de origen del chocolate belga y le aplicamos la receta y la sensibilidad españolas. Es una manera propia de entenderlo y trabajarlo, pensada para la pastelería y la hostelería profesional.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- CIERRE -->
+  <footer class="band band--dark closing reveal-footer">
+    <div class="wrap">
+      <img class="closing-logo" src="img/carem-logo-light.png" alt="Carem" width="900" height="460" loading="lazy">
+      <h2>Calidad, cercanía y oficio</h2>
+      <p class="lead">El legado de Marie-Antoine Carême, la receta española y el oficio de quien lleva 30 años cuidando cada detalle de la pastelería profesional.</p>
+      <div class="hero-actions">
+        <a class="btn btn--gold" href="https://www.artipas.com/carem" target="_blank" rel="noopener">Comprar en Artipas.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+        <a class="btn btn--ghost" href="mailto:comercial@artipas.com">comercial@artipas.com</a>
+      </div>
+      <div class="social" aria-label="Redes sociales de ARTIPAS">
+        <a href="https://www.instagram.com/artipas_es/" target="_blank" rel="noopener" aria-label="Instagram de ARTIPAS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/ArtipasEs/" target="_blank" rel="noopener" aria-label="Facebook de ARTIPAS"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21z"/></svg></a>
+      </div>
+      <p class="closing-note">CAREM es una marca de ARTIPAS · Imágenes de carácter ilustrativo.</p>
+    </div>
+  </footer>
+
+
+<script>
+  (function () {
+    var items = document.querySelectorAll('.faq-list details');
+    items.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        items.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  })();
+  (function () {
+    var header = document.getElementById('site-header');
+    if (!header) return;
+    var update = function () {
+      var on = window.scrollY > 8;
+      header.classList.toggle('is-scrolled', on);
+      document.body.classList.toggle('scrolled', on);
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+</body></html>
